@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Copy to wrangler.local.json (git-ignored) before deploying. Nothing here is secret.
+  "name": "oathbreaker-mcp",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-11-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  // A route on the same hostname takes precedence over the site's Custom Domain,
+  // so only /mcp reaches this Worker; everything else stays on the site.
+  "routes": [{ "pattern": "oathbreaker.ai/mcp*", "zone_name": "oathbreaker.ai" }],
+  "durable_objects": {
+    "bindings": [{ "name": "KEY_SLOTS", "class_name": "McpKeySlots" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["McpKeySlots"] }],
+  // Invocation logs would record request metadata; keep them off. Our code logs nothing.
+  "observability": { "logs": { "enabled": true, "head_sampling_rate": 1, "invocation_logs": false } },
+  "vars": { "OATHBREAKER_API_BASE": "https://oathbreaker.ai" }
+}

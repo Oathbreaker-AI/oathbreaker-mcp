@@ -1,0 +1,60 @@
+{
+  "name": "oathbreaker-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Oathbreaker: ask abliterated GLM, DeepSeek and Kimi models from Claude Code, Codex, Cursor, OpenCode and other MCP clients.",
+  "mcpName": "ai.oathbreaker/oathbreaker",
+  "type": "module",
+  "bin": {
+    "oathbreaker-mcp": "dist/stdio.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.worker.json",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "dev:worker": "wrangler dev --config wrangler.local.json",
+    "deploy:worker": "wrangler deploy --config wrangler.local.json",
+    "prepublishOnly": "npm run check && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "oathbreaker",
+    "abliterated",
+    "llm",
+    "claude-code",
+    "codex",
+    "cursor",
+    "opencode"
+  ],
+  "homepage": "https://oathbreaker.ai/agents/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oathbreaker-AI/oathbreaker-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Oathbreaker-AI/oathbreaker-mcp/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261124.1",
+    "@modelcontextprotocol/client": "2.4.0",
+    "@types/node": "^26.6.6",
+    "agents": "0.34.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.167.0"
+  }
+}

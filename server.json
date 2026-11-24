@@ -1,0 +1,45 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.oathbreaker/oathbreaker",
+  "title": "Oathbreaker",
+  "description": "Ask abliterated GLM, DeepSeek and Kimi models: a second model for security research and writing.",
+  "websiteUrl": "https://oathbreaker.ai/agents/mcp",
+  "repository": {
+    "url": "https://github.com/Oathbreaker-AI/oathbreaker-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://oathbreaker.ai/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer followed by your Oathbreaker API key (create one at https://oathbreaker.ai/dashboard)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "oathbreaker-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "OATHBREAKER_API_KEY",
+          "description": "Your Oathbreaker API key (create one at https://oathbreaker.ai/dashboard)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

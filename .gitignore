@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.wrangler/
+wrangler.local.json
+.dev.vars
+*.pem
+.mcpregistry_*
