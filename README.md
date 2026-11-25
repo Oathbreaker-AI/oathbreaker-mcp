@@ -1,5 +1,7 @@
 # Oathbreaker MCP server
 
+[![npm](https://img.shields.io/npm/v/oathbreaker-mcp)](https://www.npmjs.com/package/oathbreaker-mcp) [![Oathbreaker MCP server on Glama](https://glama.ai/mcp/servers/Oathbreaker-AI/oathbreaker-mcp/badges/score.svg)](https://glama.ai/mcp/servers/Oathbreaker-AI/oathbreaker-mcp)
+
 Ask [Oathbreaker](https://oathbreaker.ai)'s abliterated models (GLM-5.3, DeepSeek V4.1 Flash and Kimi K3.1 Pro) from Claude Code, Codex, Cursor, OpenCode or any other MCP client. Keep the main model you already use, and call Oathbreaker as a second model for security research on systems you own or are authorized to test, red-team and evaluation prompts, and creative or research writing.
 
 - **Hosted:** `https://oathbreaker.ai/mcp` (Streamable HTTP). Nothing to install.
