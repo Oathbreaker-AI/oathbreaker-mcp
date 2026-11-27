@@ -9,6 +9,8 @@ Ask [Oathbreaker](https://oathbreaker.ai)'s abliterated models (GLM-5.3, DeepSee
 
 Calls use your Oathbreaker API key and are charged to your prepaid credit at the [standard token rates](https://oathbreaker.ai/pricing). Create a key in the [console](https://oathbreaker.ai/dashboard). Full setup guide: [oathbreaker.ai/agents/mcp](https://oathbreaker.ai/agents/mcp).
 
+**Calling the API directly instead?** The REST API base URL is `https://oathbreaker.ai/v1` (for example `POST https://oathbreaker.ai/v1/chat/completions`, OpenAI-compatible). `ai.oathbreaker/oathbreaker` is this server's name in the MCP Registry (the domain written backwards), not a hostname. Every Oathbreaker URL is on `oathbreaker.ai`, with no `api.` subdomain. For curl, C++, Python and JavaScript examples, see [api-examples](https://github.com/Oathbreaker-AI/api-examples).
+
 ## Tools
 
 | Tool | What it does | Cost |
